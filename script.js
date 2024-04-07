@@ -2,11 +2,14 @@ const itemForm = document.querySelector("#item-form");
 const itemInput = document.querySelector("#item-input");
 const itemList = document.querySelector("#item-list");
 const clearBtn = document.querySelector("#clear");
+// filter input element
+const itemFilter = document.querySelector("#filter");
 
 // adding event listeners
 itemForm.addEventListener("submit", addItem);
 itemList.addEventListener("click", removeItem);
 clearBtn.addEventListener("click", clearItems);
+itemFilter.addEventListener("input", filterItems);
 
 // functions
 function addItem(event) {
@@ -43,5 +46,20 @@ function removeItem(event) {
 function clearItems() {
     while(itemList.firstChild) {
         itemList.removeChild(itemList.firstChild);
+    }
+}
+
+function filterItems(event) {
+    const text = itemFilter.value.toLowerCase();
+    const items = itemList.querySelectorAll("li");
+
+    for(let item of items) {
+        const itemName = item.innerText.toLowerCase();
+
+        if(itemName.indexOf(text) === -1) {
+            item.style.display = "none";
+        } else {
+            item.style.display = "flex";
+        }
     }
 }
