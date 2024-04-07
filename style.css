@@ -72,7 +72,8 @@ img {
 }
 
 .btn:hover {
-  background-color: #444;
+  background-color: #98b9a7;
+  color: black;
 }
 
 .btn-link {
@@ -97,7 +98,8 @@ img {
 }
 
 .btn-clear:hover {
-  background-color: #f1f1f1;
+  background-color: #98b9a7;
+  color: black;
 }
 
 .text-red {
