@@ -4,7 +4,6 @@ const itemInput = document.querySelector("#item-input");
 const itemList = document.querySelector("#item-list");
 const clearBtn = document.querySelector("#clear");
 const itemFilter = document.querySelector("#filter");
-let edit = false;
 
 // adding event listeners
 itemForm.addEventListener("submit", addItem);
